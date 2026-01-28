@@ -44,3 +44,16 @@ mix.append(colors)
 print(mix)
 mix.remove(at: 1) // removing "2"
 print(mix.count)
+
+// dictionaries
+let dict = ["name":"Adnan", "age":"32"]
+print(dict)
+print(dict["name", default: "name-not-found"])
+print(dict["names", default: "names-not-found"])
+print(dict.keys)
+
+// sets
+var set = Set([1,2,3,4,3,2,1])
+print(set)
+set.insert(11)
+print(set)
