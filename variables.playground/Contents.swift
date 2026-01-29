@@ -57,3 +57,24 @@ var set = Set([1,2,3,4,3,2,1])
 print(set)
 set.insert(11)
 print(set)
+
+// enums
+enum Weekdays  {
+	case monday, tuesday,wednesday, thursday, friday, saturday, sunday
+}
+
+var day = Weekdays.monday
+day = .sunday
+print(day)
+
+// type annotations
+let d : Double = 0.5
+let i : Int = 2
+let flag : Bool = false
+var nameString : String = "Adnan"
+let arrOfString : [String] = ["a","b","c"]
+let dict2 : [String:Any] = ["name" : "Adnan","age" : 32]
+enum Themes {
+	case light, dark, system
+}
+var UI: Themes = Themes.dark
