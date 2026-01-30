@@ -116,7 +116,7 @@ default:
 	print("The weather is unusual.")
 }
 
-// ternary operation
+// ternary operator
 let people = 100
 let isFull = people >= 100 ? "Capacity Full." : "Still room for more."
 print(isFull)
