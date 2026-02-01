@@ -142,3 +142,22 @@ while num>0 {
 	num -= 1
 }
 print("Done")
+
+
+// functions
+///function with return type
+func rollDice() -> Int {
+	return Int.random(in: 1...6)
+}
+print("Dice roll result \(rollDice())")
+/// function with parameter
+func tableOfNumber(number : Int){
+	for i in 1...10{
+		print("\(number) x \(i) = \(number*i)")
+	}
+}
+tableOfNumber(number: 7)
+func sumOfTwoNumbers(num1 : Int, num2 : Int) -> Int {
+	return num1 + num2
+}
+print("sum =", sumOfTwoNumbers(num1: 4, num2: 3))
