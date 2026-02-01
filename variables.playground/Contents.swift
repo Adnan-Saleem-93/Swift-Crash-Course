@@ -161,3 +161,13 @@ func sumOfTwoNumbers(num1 : Int, num2 : Int) -> Int {
 	return num1 + num2
 }
 print("sum =", sumOfTwoNumbers(num1: 4, num2: 3))
+
+// tuples
+func getUser() -> (newName: String, newAge: Int){
+	(newName: "John", newAge: 35)
+}
+print("name ->", getUser().newName)
+print("age ->", getUser().newAge)
+/// destructuring tuples
+let (newName, _) = getUser()
+print(newName) /// tuples can be destructed by their name and the ones we don't need can be ignored using "_" (underscore)
