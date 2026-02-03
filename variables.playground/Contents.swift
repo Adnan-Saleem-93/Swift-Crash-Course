@@ -162,7 +162,7 @@ func sumOfTwoNumbers(num1 : Int, num2 : Int) -> Int {
 }
 print("sum =", sumOfTwoNumbers(num1: 4, num2: 3))
 
-// tuples
+// returning multiple values (tuples) from functions
 func getUser() -> (newName: String, newAge: Int){
 	(newName: "John", newAge: 35)
 }
@@ -171,3 +171,32 @@ print("age ->", getUser().newAge)
 /// destructuring tuples
 let (newName, _) = getUser()
 print(newName) /// tuples can be destructed by their name and the ones we don't need can be ignored using "_" (underscore)
+
+// customizing parameter values in functions
+/// to avoid passing parameters by name, add "underscore" before the parameter name in the function definition
+func isUppercasedOrLowercasedString (_ string : String, _ eval: String){
+	if string == string.uppercased(){
+		print("string is \(eval)")
+		
+	}
+	else if string == string.lowercased(){
+		print("string is \(eval)")
+	}
+	else {
+		print("string is \(eval)")
+	}
+}
+/// now we can pass the parameter without the names
+isUppercasedOrLowercasedString("HELLO WORLD","UPPERCASED")
+isUppercasedOrLowercasedString("hello world","LOWERCASED")
+isUppercasedOrLowercasedString("Hello World","neither UPPERCASED nor LOWERCASED")
+
+/// add "for" before parameter name, if you want to encapsulate the parameter name in the scope of this function,
+/// outside of this function, the "number" parameter will be hidden
+func printTable(for number : Int, for title: String){
+	print("\n\n\(title) \(number)")
+	for i in 1...10{
+		print("\(number) x \(i) = \(number*i)")
+	}
+}
+printTable(for: 6, for: "Table for")
