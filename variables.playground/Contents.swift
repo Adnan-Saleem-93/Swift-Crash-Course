@@ -3,8 +3,8 @@ import Foundation
 
 // string
 let greeting = "Hello, playground"
-print(greeting.uppercased().hasSuffix("ND"))
 print(greeting.count)
+print(greeting.uppercased().hasSuffix("ND"))
 
 // string interpolation
 let name = "Adnan"
@@ -211,3 +211,31 @@ func greetUser(_ name:String, _ formal: Bool = false){
 }
 greetUser("Jason", true)
 greetUser("Taylor")
+
+// Error Handling in functions
+/// 1. define the errors
+enum EmailErrors: Error {
+	case required, invalid
+}
+
+func checkEmail(_ email: String) throws -> String {
+	if email.isEmpty {
+		throw EmailErrors.required
+	}else if !email.contains("@") || !email.contains(".com"){
+		throw EmailErrors.invalid
+	}else{
+		return "Email OK"
+	}
+}
+do{
+	let result = try checkEmail("test@gmail.com")
+	print(result)
+	let result2 = try checkEmail("xyz@gmai.com")
+	print(result2)
+}catch EmailErrors.required {
+	print("Email is required")
+}catch EmailErrors.invalid {
+	print("Email is invalid")
+}catch{
+	print("Email is incorrect.")
+}
