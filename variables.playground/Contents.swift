@@ -200,3 +200,14 @@ func printTable(for number : Int, for title: String){
 	}
 }
 printTable(for: 6, for: "Table for")
+
+// passing default values for function parameters
+func greetUser(_ name:String, _ formal: Bool = false){
+	if formal {
+		print("Welcome", name)
+	}else{
+		print("Hi", name)
+	}
+}
+greetUser("Jason", true)
+greetUser("Taylor")
