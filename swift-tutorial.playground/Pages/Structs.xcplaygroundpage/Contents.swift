@@ -28,4 +28,27 @@ book.getRatings()
 book.updateRatings(4.3)
 book.getRatings()
 
+
+struct Car {
+	let name: String
+	let model: Int
+	var price : Double // in US dollars
+	let tax: Double = 5
+	
+	var currentPrice : Double {
+		get{
+			price + (tax/100 * price)
+		}
+		set{
+			price = newValue
+		}
+	}
+}
+
+var car = Car(name: "Honda Civic", model: 2005, price: 10000)
+var currentPrice = car.currentPrice
+print(currentPrice)
+car.currentPrice = 15000
+print(car.currentPrice)
+
 //: [Next](@next)
