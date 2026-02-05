@@ -55,4 +55,23 @@ var car = Car(name: "Honda Civic", model: 2005, price: 10000)
 var currentPrice = car.currentPrice
 car.currentPrice = 15000
 
+struct Player {
+	let name : String
+	let ranking : Int
+	
+	init(name: String) {
+		self.name = name
+		self.ranking = 1
+	}
+	init(name:String, ranking: Int){
+		self.name = name
+		self.ranking = ranking
+	}
+}
+
+let newPlayer1 = Player(name: "Jon Snow")
+print(newPlayer1)
+let newPlayer2 = Player(name: "Aegon Targaryen", ranking: 2)
+print(newPlayer2)
+
 //: [Next](@next)
